@@ -8,10 +8,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f15946;
+  background: #0097c8;
   transition: 0.4s ease-in-out;
 }
 
+.Z{
+z-index: -1;
+}
 html,
 body,
 #root {
@@ -40,7 +43,22 @@ body,
   align-items: center;
   justify-content: center;
 }
+.container1 {
+  margin: 0 auto;
+  width: 25%;
+  max-width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+
+.img1{
+  width: 96%;
+  height: 84%;
+  margin-right: 75%;
+}
 header {
   position: absolute;
   z-index: 99;

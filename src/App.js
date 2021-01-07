@@ -97,6 +97,7 @@ function Loader() {
 }
 
 export default function App() {
+  
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
@@ -110,37 +111,34 @@ export default function App() {
       <Canvas
         concurrent
         colorManagement
-        camera={{ position: [0, 0, 120], fov: 70 }}>
+        camera={{ position: [0, 0, 130], fov: 60 }}>
         {/* Lights Component */}
         <Lights />
         <Suspense fallback={null}>
           <HTMLContent
             domContent={domContent}
-            bgColor='#f15946'
-            modelPath='/armchairYellow.gltf'
-            position={250}>
-            <span>Meet the new </span>
-            <span>shopping experience </span>
-            <span>for online chairs</span>
+            bgColor='#00b5ef'
+            modelPath='/ship.glb'
+            position={100}>
+            <span>Timothy</span>
+            <span> Seifert</span>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
-            bgColor='#571ec1'
-            modelPath='/armchairGreen.gltf'
-            position={0}>
-            <span>Shit... we even</span>
-            <span>got different colors</span>
+            bgColor='#00a6dc'
+            modelPath='/case.glb'
+            position={-50}>
+              <span>Case and point</span>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
-            bgColor='#636567'
-            modelPath='/armchairGray.gltf'
-            position={-250}>
-            <span>And yes</span>
-            <span>we even got</span>
-            <span>monochrome!</span>
+            bgColor='#004d66'
+            modelPath='/moonearth.glb'
+            position={-300}>
+            <span>I make cool things</span>
           </HTMLContent>
         </Suspense>
+
       </Canvas>
       <Loader />
       <div
