@@ -1,16 +1,15 @@
 
 
 import React, { useRef, useEffect, useState, Suspense } from "react";
-import "./App.scss";
+import "./Homepage.scss";
 //Components
 import Header from "./components/header";
 import { Section } from "./components/section";
-import ReactPlayer from 'react-player';
 // Page State
 import state from "./components/state";
 
 // R3F
-import { Canvas, useFrame } from "react-three-fiber";
+import { Canvas } from "react-three-fiber";
 import { Html, useProgress, useGLTFLoader } from "drei";
 
 // React Spring
@@ -18,7 +17,6 @@ import { a, useTransition } from "@react-spring/web";
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
 //video scrollArea
-import { VideoScroll } from 'react-video-scroll'
 
 function Model({ url }) {
   const gltf = useGLTFLoader(url, true);

@@ -1,16 +1,15 @@
 
 
 import React, { useRef, useEffect, useState, Suspense } from "react";
-import "./App.scss";
+import "./Homepage.scss";
 //Components
 import Header from "./components/header";
 import { Section } from "./components/section";
-import ReactPlayer from 'react-player';
 // Page State
 import state from "./components/state";
 
 // R3F
-import { Canvas, useFrame } from "react-three-fiber";
+import { Canvas } from "react-three-fiber";
 import { Html, useProgress, useGLTFLoader } from "drei";
 
 // React Spring
@@ -18,7 +17,6 @@ import { a, useTransition } from "@react-spring/web";
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
 //video scrollArea
-import { VideoScroll } from 'react-video-scroll'
 
 function Model({ url }) {
   const gltf = useGLTFLoader(url, true);
@@ -84,31 +82,6 @@ const HTMLContent = ({
   );
 };
 
-const HTMLContent1 = ({
-    domContent,
-    children,
-    bgColor,
-    position
-  }) => {
-    const ref = useRef();
-    const [refItem, inView] = useInView({
-      threshold: 0,
-    });
-    useEffect(() => {
-      inView && (document.body.style.background = bgColor);
-    }, [inView]);  
-    return (
-      <Section factor={1.5} offset={1}>
-        <group position={[0, position, 0]}>
-          <Html fullscreen portal={domContent}>
-            <div ref={refItem} className='container1'>
-            {children}
-            </div>
-          </Html>
-        </group>
-      </Section>
-    );
-  };
   
 function Loader() {
   const { active, progress } = useProgress();
@@ -230,16 +203,6 @@ export default function MyStuff() {
             y = {0}
             z= {0}>
           </HTMLContent>  
-          <HTMLContent1
-                   domContent={domContent}
-                   bgColor='#00b5ef'
-                   position={-20}
-                   x= {0}
-                   y = {0}
-                   z= {0}> 
-          <ReactPlayer url=' https://www.youtube.com/watch?v=qybFnnv3Pos' />
-  
-    </HTMLContent1>
     <HTMLContent
             domContent={domContent}
             bgColor='#00b5ef'
