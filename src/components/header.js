@@ -1,20 +1,22 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 
 export default function Header() {
+  const history = useHistory();
   return (
     <header>
       <div className='header-inner'>
-        <a href='/#/' className='logo'>SEIFERT.</a>
+        <button onClick={() =>  history.push('/')}>SEIFERT.</button>
         <nav>
           <ul>
             <li>
-              <a href='/#/MyStuff'>My Stuff</a>
+              <button onClick={() =>  history.push('/MyStuff')}>My Stuff</button>
             </li>
             <li>
-              <a href='/#/MyResume'>My Resume</a>
+              <button onClick={() =>  history.push('/MyResume')}>My Resume</button>
             </li>
             <li>
-              <a href='/#/MyContact'>My Contact</a>
+              <button onClick={() =>  history.push('/MyContact')}>My Contact</button>
             </li>
           </ul>
         </nav>
